@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Add Results {% endblock %}
+
+{% block body %}
+ 
+<h1>  You have added {{ creator.username }} </h1>
+
+<p> Get creator details for <a href="/creators/{{ creator.username }} "> {{ creator.username}} </a> </p>
+
+
+{% endblock %}

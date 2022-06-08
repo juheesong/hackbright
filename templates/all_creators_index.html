@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} All Creators {% endblock %}
+
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script> {% endblock %}
+
+
+{% block body %}
+
+  <h1>Creators You Are Following </h1>
+
+  <ul>
+    {% for creator in creators %}
+      <li>
+        <a href="/creators/{{ creator.username }}">
+          {{ creator.username }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- Update this to link to all_creators with the latest metrics as ajax call  --> 
+<!-- <form action="/update_all"> 
+    <label for="update">Update metrics for all your creators </label>
+    <input name="creators" type='hidden' value={{ creators }}> </input>
+    <button id="button" placeholder="Update" class="w3-btn w3-grey w3-round-large" type="submit">Update</button>
+  </form> -->
+
+
+<!-- <script src="/static/js/creator.js"></script> -->
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %} Creator Details | {{ creator.username }} {% endblock %}
+
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script> {% endblock %}
+
+{% block body %}
+
+
+<h1>Creator:  {{ creator.username }} </h1>
+
+<div class="row"> 
+<div class="chart-container">
+<canvas id="historical-chart" class="chart"> </canvas>
+</div></div> <p> </p>
+
+<center> 
+<div class="row"> 
+  <div class="col-11 offset-1"> 
+  <table class="table table-striped table-hover">
+
+<tr> 
+  <th><h3> Followers </h3></th>
+  <th><h3> Following </h3></th>
+  <th><h3> Videos</h3></th>
+  <th><h3> Likes </h3></th>
+  <th><h3> Data date</h3> </th> 
+</tr>
+  {% for metric in creator.metrics %} 
+  <tr> 
+  <td>{{ metric.followers }}</td> 
+  <td>{{ metric.following }}</td> 
+  <td>{{ metric.videos }}</td> 
+  <td>{{ metric.likes }}</td> 
+  <td>{{ metric.dl_date }}</td> 
+  </tr>
+  {% endfor %} 
+</table>
+</div> 
+</center>
+
+
+
+<div class="row"> 
+<form action="/update">
+  <label for="update">Display latest metric update below </label>
+  <input id="username" name="username" type='hidden' value= {{ creator.username }}> </input>
+  <button id="button" placeholder="Update" class="w3-btn w3-grey w3-round-large" type="submit">Update</button>
+</form>
+
+<div class="chart-container">
+<canvas id="current-chart" class="chart"></canvas>
+</div></div> 
+
+<div class="row"> 
+  <form action="/creators/remove" method="GET">
+  <label for="remove">Remove this creator from your list </label>
+  <input name="username" type='hidden' value="{{ creator.username }}"> </input>
+  <button id="button" placeholder="Remove" class="w3-btn w3-grey w3-round-large" type="submit">Remove</button>
+</form>
+</div>
+
+
+
+
+
+
+<script src="/static/js/creator.js"></script>
+
+
+{% endblock %}
+
+
+
+
+
+

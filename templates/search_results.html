@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Results - {{ data['userInfo']['user']['uniqueId'] }} {% endblock %}
+
+{% block body %}
+
+
+<h1> Username:  {{ data['userInfo']['user']['uniqueId'] }} </h1> 
+
+<img src="{{ data['userInfo']['user']['avatarMedium'] }}" width="20%" height="20%"> 
+<i> {{ data['userInfo']['user']['signature'] }} </i><br> 
+
+<li> Follower Count: {{ data['userInfo']['stats']['followerCount'] }} </li>
+<li> Following Count: {{ data['userInfo']['stats']['followingCount'] }} </li>
+<li> Video Count: {{ data['userInfo']['stats']['videoCount'] }} </li>
+<li> Hearts/likes Count: {{ data['userInfo']['stats']['heartCount'] }} </li>
+<li> Time of data: {{dl_date}} </li>
+        
+<p> </p> <p> </p>
+          <form action="/creators/add" method="GET">
+            <label for="add">Add this creator to your list </label>
+            <input name="username" type='hidden' value="{{ data['userInfo']['user']['uniqueId'] }}"> </input>
+            <button id="button" placeholder="Add" class="w3-btn w3-grey w3-round-large" type="submit">Add</button>
+          </form>
+
+
+
+
+        </div>
+
+{% endblock %}

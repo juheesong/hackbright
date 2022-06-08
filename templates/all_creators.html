@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} All Creators {% endblock %}
+
+{% block head %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script> {% endblock %}
+
+{% block body %}
+  <h1>All Creators</h1>
+
+  <div id="update">
+  <canvas id="test-chart" width="400" height="400"></canvas>
+
+  <script>
+    const testChart = new Chart(
+      document.querySelector('#test-chart'),
+      {
+        type: 'bar',
+        data: {
+          labels: ['Following', 'Followers', 'Videos', 'Likes'],
+          datasets: [
+            {data: [{{ creator.metrics[-1].following }} , 4, 8]}
+          ]
+        }
+      }
+    );
+  </script>
+
+  <ul>
+    {% for creator in creators %}
+      <li>
+        {{ creator.username }} 
+        Following: {{ creator.metrics[-1].following }}
+        Followers: {{ creator.metrics[-1].followers }}
+        Videos: {{ creator.metrics[-1].videos }}
+        Likes: {{ creator.metrics[-1].likes }}
+
+
+      </li>
+    {% endfor %}
+  </ul>
+
+  </div> 
+
+
+
+
+{% endblock %}

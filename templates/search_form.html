@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Find Creators {% endblock %}
+
+{% block body %}
+
+<h1>Search for Creators </h1> 
+
+
+  <main class="form-search">
+    <form action="/creators/search" method="GET">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="username" name="username" placeholder="username">
+        <label for="username">Username</label>
+        <button class="w-100 btn btn-lg btn-dark" type="submit">Search</button>
+      </div>
+    </form>
+  </main>
+
+{% endblock %}

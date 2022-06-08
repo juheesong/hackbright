@@ -1,0 +1,157 @@
+body {
+  margin: 100;
+  min-height: 80%;
+  padding-top: 100;
+  background-color: #f9efe4;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Playfair Display', serif;
+  color: #2f2f30;
+  font-size: 18px;
+  line-height: 1.5em;
+  font-weight: 500
+}
+
+div {
+  padding-left: 10px; 
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  padding: 10px; 
+}
+
+a { 
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+button { 
+  border-radius: 15px 50px;
+  padding: 5px; 
+  background-color: #b0c4b1; 
+}
+
+h1 {
+  color: #4a5759;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 60px;
+}
+
+h2 {
+  color: #7db780 ;
+  font-family: 'Playfair Display', serif;
+  font-size: x-large;
+}
+
+h3 {
+  color: #4a5759;
+  font-family: 'Bebas Neue', cursive;
+  font-size: x-large;
+}
+
+table.th { 
+  color: #4a5759;
+  font-family: 'Bebas Neue', cursive;
+  font-size: x-large;
+}
+
+/* unvisited link */
+a:link {
+  color: #4a5759;
+}
+
+/* visited link */
+a:visited {
+  color: #4a5759;
+}
+
+/* mouse over link */
+a:hover {
+  color: #b0c4b1;
+}
+
+/* selected link */
+a:active {
+  color: #b0c4b1;
+}
+
+.flash-msg {
+  font-family: 'Bebas Neue', cursive;
+  font-size: xx-large;
+  color: #7db780; 
+}
+
+
+.chart-container {
+  width: 80vw; 
+  height: 60vh; 
+  position: relative; 
+}
+
+.container { 
+  position: relative; 
+  padding-top: 30px; 
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-search {
+  max-width: 430px;
+}
+
+/* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+  color: #f2f2f2;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  color: #b0c4b1
+}
+
+#navbar span {
+  float: right;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
