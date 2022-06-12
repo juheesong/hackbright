@@ -286,7 +286,7 @@ def about():
 	return render_template("main.html")
 
 if __name__ == '__main__':
-    app.debug = True
+    app.run() 
     connect_to_db(app)
     app.run(host='0.0.0.0')
 
